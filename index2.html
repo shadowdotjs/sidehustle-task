@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
     <title>Document</title>
+    <script>
+        const form = document.querySelector('form');
+        const emailInput = document.querySelector('#email');
+        const emailError = document.querySelector('#email-error');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // prevent form submission
+
+            if (!emailInput.checkValidity()) {
+                emailError.textContent = 'Please enter a valid email address';
+            } else {
+                // submit the form
+                form.submit();
+            }
+        });
+
+
+    </script>
 </head>
 <body>
     <form onsubmit="alert('Form submitted');">
